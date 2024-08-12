@@ -1,0 +1,57 @@
+TypeScript -> JavaScript with syntax for Types (JavaScript with Super Powers)
+
+Steps:
+Install node.js
+See current Execution Policy -> It is 'restricted' by default
+    'Get-ExecutionPolicy' 
+Set the Execution Policy to 'RemoteSigned'
+    'Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser'
+Install TypeScript globally in the system in terminal using
+    'npm install -g typescript'
+Install 'ts-node' in terminal using
+    'npm install -g ts-node'
+Initialize TypeScript Compiler in terminal to create 'tsconfig.json'
+    'tsc --init'
+Compile all .ts files to generate .js files
+    'tsc'
+Compile a particular .ts file to generate .js file
+    'tsc filename.ts'
+Run .js file (only .js file can be read by browser)
+    'node filename.js'
+
+Externel Extensions:
+JavaScript and TypeScript Nightly
+Code Runner
+    Run the code just by pressing (Keyboard Shortcut to be set in settings of Code Runner)
+        'Shift+Enter'
+        
+
+Changes in 'tsconfig.json' File
+
+To retain ES6 features used in TS file to reflect in JS file (const, arrow function, etc.)
+    change '"target": "es2016"' to '"target": "ES6"'
+
+To Compile only selected files
+    add '"files": ["sample.ts",sample2.ts]' at the end of the file
+
+To Include all files from a folder while compiling
+    add '"include": ["src/**/*"]' at the end of the file
+
+To Include certain files from a folder while compiling
+    add '"include": ["src/sample1.ts", "src/sample2.ts"]' at the end of the file
+
+To Include all files during compilation
+    add '"exclude": ["src/**/*"]' at the end of the file
+
+To Exclude certain files during compilation
+    add '"exclude": ["src/sample2.ts", "src/sample3.ts"]' at the end of the file
+
+(Shows error if 'include' and 'exclude' paths conflict)
+
+To Specify the destination of the .js files to be generated
+    find '"outDir": "./"' in the file, uncomment it, change it to '"outDir": "./dist"'
+
+To Use Axios and Express
+'npm init -y' creates the 'package.json' file
+'npm i axios' installs 'node_modules' folder and 'package-lock.json' file
+'npm i express' installs 'node_modules' folder
